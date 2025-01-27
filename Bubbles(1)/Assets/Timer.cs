@@ -26,7 +26,7 @@ public class Timer : MonoBehaviour
             
             if(_maxTimeSeconds <= 0) 
             {
-               
+               EndGame();
             }
         }
     }
@@ -36,5 +36,10 @@ public class Timer : MonoBehaviour
         _timeRemaining = _maxTimeSeconds;
         _points.SecondsRemaining(_timeRemaining);
         _runGame = true;
+    }
+
+    public void EndGame ()
+    {
+        _runGame = false;
     }
 }
