@@ -23,7 +23,7 @@ public class Points : MonoBehaviour
     public void ChangePoints(int score)
     {
         total_points += score;
-        _text.text = "Points:" + total_points;
+        _text.text = "Points: " + total_points;
     }
 
     public void SecondsRemaining(float seconds)
