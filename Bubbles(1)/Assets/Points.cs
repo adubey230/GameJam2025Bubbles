@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-public class Bubble : MonoBehaviour
+public class Points : MonoBehaviour
 {
-    [SerializeField] GameObject _gameObject;
-    [SerializeField] private Points _points;
-    
+    [SerializeField] private TMP_Text _text;
+    private int total_points = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,11 +19,9 @@ public class Bubble : MonoBehaviour
         
     }
 
-    void OnMouseDown()
+    public void ChangePoints(int score)
     {
-        _points.ChangePoints(1);
-        Destroy(_gameObject);
-
-        Debug.Log("Bubble popped");
+        total_points += score;
+        _text.text = "Points:" + total_points;
     }
 }
